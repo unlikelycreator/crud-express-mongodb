@@ -5,14 +5,14 @@ const app = express();
 
 
 
-MongoClient.connect('mongodb+srv://Ampfibian:pawar2700@cluster0.vmmbl.mongodb.net/<dbname>?retryWrites=true&w=majority', { useUnifiedTopology: true })
+MongoClient.connect('mongodb+srv://<Username>:<Password>@cluster0.vmmbl.mongodb.net/<dbname>?retryWrites=true&w=majority', { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
     app.use(bodyParser.urlencoded({ extended: true }))
 
     app.get('/', (req, res) => {
-  	res.sendFile('C:/Hritik/programming/Advanced Web/FirstMern' + '/index.html')
+  	res.sendFile('<absolute project folder path>' + '/index.html')
 	})
 
 	app.post('/quotes', (req, res) => {
