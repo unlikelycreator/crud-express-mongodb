@@ -15,8 +15,6 @@ Libraries:
  After creating database
  In server.js replace
   >>MongoClient.connect('------Your Database Link here --------') 
-                                            ^
-                                            |
                                             
   link with your database link and insert your Datanase Username and password in the link where specified.
  
