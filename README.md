@@ -14,7 +14,7 @@ Libraries:
  
  After creating database
  In server.js replace
-  >>MongoClient.connect('mongodb+srv://Username:password@cluster0.vm.........') 
+  >>MongoClient.connect('------Your Database Link here --------') 
                                             ^
                                             |
                                             
