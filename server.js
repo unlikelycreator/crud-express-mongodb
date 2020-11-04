@@ -5,19 +5,23 @@ const app = express();
 
 
 
-MongoClient.connect('mongodb+srv://<Username>:<Password>@cluster0.vmmbl.mongodb.net/<dbname>?retryWrites=true&w=majority', { useUnifiedTopology: true })
+MongoClient.connect('mongodb+srv://Ampfibian:pawar2700@cluster0.vmmbl.mongodb.net/<dbname>?retryWrites=true&w=majority', { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
     app.use(bodyParser.urlencoded({ extended: true }))
 
     app.get('/', (req, res) => {
-  	res.sendFile('<absolute project folder path>' + '/index.html')
+  	res.sendFile('D:/Programming/WEB/MERN/crud-express-nodejs' + '/index.html')
 	})
 
 	app.post('/quotes', (req, res) => {
-  	console.log(req.body)
-  	})
+        db.collection('quotes').insertOne(req.body, (err, result) => {
+          if (err) return console.log(err)
+          console.log('saved to database')
+          res.redirect('/')
+        })
+      })
 
   	app.listen(3000, function() {
 	console.log('listening on 3000')
