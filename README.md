@@ -12,5 +12,12 @@ Libraries:
  Create MongoDB cloud databse:
   Tutorial : 
  
+ After creating database
+ In server.js replace
+  >>MongoClient.connect('mongodb+srv://Username:password@cluster0.vm.........') 
+                                            ^
+                                            |
+                                            
+  link with your database link and insert your Datanase Username and password in the link where specified.
  
   
